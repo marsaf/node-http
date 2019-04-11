@@ -7,7 +7,7 @@ build:
     docker: {}
   tagPolicy:
     envTemplate:
-      template: '{{.DOCKER_REGISTRY}}/marsaf/node-http:{{.VERSION}}'
+      template: '{{.DOCKER_REGISTRY}}/oraseemeafrtech1/node-http:{{.VERSION}}'
   local: {}
 deploy:
   kubectl: {}
@@ -18,7 +18,7 @@ profiles:
     - docker: {}
     tagPolicy:
       envTemplate:
-        template: '{{.DOCKER_REGISTRY}}/marsaf/node-http:{{.DIGEST_HEX}}'
+        template: '{{.DOCKER_REGISTRY}}/oraseemeafrtech1/node-http:{{.DIGEST_HEX}}'
     local: {}
   deploy:
     helm:
@@ -26,5 +26,5 @@ profiles:
       - name: node-http
         chartPath: charts/node-http
         setValueTemplates:
-          image.repository: '{{.DOCKER_REGISTRY}}/marsaf/node-http'
+          image.repository: '{{.DOCKER_REGISTRY}}/oraseemeafrtech1/node-http'
           image.tag: '{{.DIGEST_HEX}}'
